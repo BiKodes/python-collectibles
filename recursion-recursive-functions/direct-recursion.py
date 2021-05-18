@@ -58,3 +58,23 @@ def factorial(x):
 num = 3
 print("The factorial of", num, "is", factorial(num))
 
+
+# Recursion in with a list:
+
+def sum(list):
+    if len(list) == 1:
+        return list[0]
+
+    else:
+        return list[0] + sum(list[1:])
+
+print(sum([ 5, 8, 4, 8, 10]))
+
+# Factorial with recursion:
+
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+print(factorial(3))
