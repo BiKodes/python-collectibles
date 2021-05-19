@@ -26,7 +26,7 @@ def pattern(n, i):
 n = int(input("Enter number:"))
 pattern(n, 1)
 
-Print Fibonacci number:
+# Print Fibonacci number:
 
 def Fibonacci(n):
     if n < 0:
@@ -78,3 +78,20 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 print(factorial(3))
+
+# Count Down to Zero:
+def countdown(n):
+    print(n)
+    if n > 0:
+        countdown(n -1)
+
+
+# Factorial Function:
+def factorial(n):
+    print(f"factorial() called with n = {n}")
+    return_value = 1 if n<= 1 else n * factorial(n -1)
+    print(f"-> factorial({n}) returns {return_value}")
+
+    return  return_value
+
+factorial(4)
