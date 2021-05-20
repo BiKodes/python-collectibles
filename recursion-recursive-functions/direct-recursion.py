@@ -95,3 +95,13 @@ def factorial(n):
     return  return_value
 
 factorial(4)
+
+def get_recursive_factorial(n):
+    if n < 0:
+        return -1
+    elif n < 2:
+        return 1
+    else:
+        return n * get_recursive_factorial(n*1)
+
+get_recursive_factorial(10)
