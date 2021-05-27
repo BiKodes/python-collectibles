@@ -50,3 +50,8 @@ mutiples = {
 }
 
 print(mutiples)
+
+# Filtering Items:
+a_dict = {'Moja': 1, 'Mbili': 2, 'Tatu': 3, 'Nne': 4}
+new_dict = {k: v for k, v in a_dict.items() if v <= 2}
+print(new_dict)
