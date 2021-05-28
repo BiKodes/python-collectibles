@@ -55,3 +55,22 @@ print(mutiples)
 a_dict = {'Moja': 1, 'Mbili': 2, 'Tatu': 3, 'Nne': 4}
 new_dict = {k: v for k, v in a_dict.items() if v <= 2}
 print(new_dict)
+
+# Conditionals to Dictionary Comprehension:
+# If Condition:
+dict1 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+# Check for items greater than 2:
+dict1_cond = {k:v for (k, v) in dict1.items() if v>2}
+print(dict1_cond)
+
+# Multiple If Conditions:
+# items greater than 2 & they are multiples of 2 at the same time.
+
+dict1_doubleCond = {k:v for (k,v) in dict1.items() if v>2 if v%2 == 0}
+print(dict1_doubleCond)
+
+dict2 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f':6}
+
+dict2_tripleCond = {k:v for (k, v) in dict2.items() if v>2 if v%2 == 0 if v%3 == 0}
+print(dict2_tripleCond)

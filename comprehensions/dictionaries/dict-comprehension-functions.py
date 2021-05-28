@@ -81,26 +81,19 @@ unpacking_operator = {**vegetable_prices, **fruit_prices}
 for k, v in {**vegetable_prices, **fruit_prices}.items():
     print(k, '--->', v)
 
-# initialize a dictionary:
-a = {'apple': 'fruit', 'beetroot': 'vegetable', 'cake': 'dessert'}
-a['doughnut'] = 'snack'
-print(a['apple'])
+# lambda functions:
+# mainly used in combination with the functions filter(), map() and reduce().
 
-a = {'one': 1, 'two': 'to', 'three': 3.0, 'four': [4,4.0]}
-print(a)
+# Initialize `fahrenheit` dictionary:
+fahrenheit = {'t1': -30, 't2': -20, 't3': -10, 't4': 0}
 
-# Update a dictionary
-a['one'] = 1.0
-print(a)
+#Get the corresponding `celsius` values:
+celsius = list(map(lambda x: (float(5)/9)*(x-32), fahrenheit.values()))
 
-# Delete a single element:
-del a['one']
-print(a)
+#Create the `celsius` dictionary:
+celsius_dict = dict(zip(fahrenheit.keys(),  celsius))
 
-# Delete all elements in the dictionary:
-a.clear()
-print(a)
+print(celsius_dict)
 
-# Delete the dictionary:
-del a
-print(a)
+celsius = {k: (float(5)/9)*(v-32) for (k, v) in fahrenheit.items()}
+print(celsius_dict)

@@ -74,16 +74,61 @@ incomes = {'Apple': 5600.00, 'Orange': 3500.00, 'Banana': 5000.00}
 for key in sorted(incomes, reverse=True):
     print(key, '--->', incomes[key])
 
+# initialize a dictionary:
+a = {'apple': 'fruit', 'beetroot': 'vegetable', 'cake': 'dessert'}
+a['doughnut'] = 'snack'
+print(a['apple'])
+
+a = {'one': 1, 'two': 'to', 'three': 3.0, 'four': [4,4.0]}
+print(a)
 
 
+# Update a dictionary
+a['one'] = 1.0
+print(a)
+
+# Delete a single element:
+del a['one']
+print(a)
+
+# Delete all elements in the dictionary:
+a.clear()
+print(a)
+
+# Delete the dictionary:
+del a
+print(a)
+
+# Delete a single element:
+del a['one']
+print(a)
+
+# Delete all elements in the dictionary:
+a.clear()
+print(a)
 
 
+dict1 = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
 
+double_dict1 = {k: v*2 for (k, v) in dict1.items()}
+print(double_dict1)
 
+# change the names of the key:
+dict1_keys = {k*2: v for (k, v) in dict1.items()}
+print(dict1_keys)
 
+numbers = range(10)
+new_dict_for = {}
 
+#Add values to 'new_dict' using for loop:
 
+for n in numbers:
+    if n % 2 == 0:
+        new_dict_for[n] = n**2
 
+print(new_dict_for)
 
+# Use dictionary comprehension:
+new_dict_comp = {n: n*2 for n in numbers if n%2 == 0}
 
-
+print(new_dict_comp)
