@@ -69,4 +69,21 @@ for value in sorted(incomes.values()):
     print(value)
 
 # Reversed:
+incomes = {'Apple': 5600.00, 'Orange': 3500.00, 'Banana': 5000.00}
+
+for key in sorted(incomes, reverse=True):
+    print(key, '--->', incomes[key])
+
+
+
+
+
+
+
+
+
+
+
+
+
 
