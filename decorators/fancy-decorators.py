@@ -51,3 +51,84 @@ class TimeWaster:
         for _ in range(num_times):
             sum([i**2 for i in range(self.max_num)])
 
+# Nesting Decorators:
+from decoratorexamples import debug
+from decorators import   do_twice
+
+@debug
+@do_twice
+def greet(name):
+    print(f"Hello {name}")
+
+greet("Baraka")
+
+@do_twice
+@debug
+def greet(name):
+    print(f"Hello {name}")
+
+greet("Furaha")
+
+# Decorators With Arguments:
+import functools
+def repeat(num_times):
+    def decorator_repeat(func):
+        @functools.wraps(func)
+        def wrapper_repeat(*args, **kwargs):
+            for _ in range(num_times):
+                value = func(*args, **kwargs)
+            return value
+        return wrapper_repeat
+    return decorator_repeat
+
+@repeat(num_times=4)
+def greet(name):
+    print(f"Hello {name}")
+
+
+# The decorators that can be used both with and without arguments.
+import functools
+def repeat(_func=None, *, num_times=2):
+    def decorator_repeat(func):
+        @functools.wraps(func)
+        def wrapper_repeat(*args, **kwargs):
+            for _ in range(num_times):
+                value = func(*args, **kwargs)
+            return value
+        return wrapper_repeat
+
+    if _func is None:
+        return decorator_repeat
+    else:
+        return decorator_repeat(_func)
+
+
+@repeat
+def say_whee():
+    print('Wheee!')
+
+@repeat(num_times=3)
+def greet(name):
+    print(f"Jambo {name}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

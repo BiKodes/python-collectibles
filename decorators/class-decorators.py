@@ -1,4 +1,6 @@
 # a class decorator:
+# It does essentially the same thing as the wrapper() function in our earlier examples.
+# Note that you need to use the functools.update_wrapper() function instead of @functools.wraps.
 from dataclasses import dataclass
 from decoratorexamples import timer
 

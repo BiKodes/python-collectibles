@@ -1,4 +1,4 @@
-import functools
+c
 
 def do_twice(func):
     @functools.wraps(func)
