@@ -65,8 +65,57 @@ def test_gen_key(monkeypatch):
     assert gen_token() == f"TOKEN_{'feedfacecafebeef'}"
 
 
+# Return Multiple Values:
+# Return multiple values by packing them in a tuple:
+findSquareCube = lambda num: (num**2, num**3)
+x, y = findSquareCube(2)
+print(x)
+print(y)
+
+# if else in a Lambda:
+# you cannot use it in a lambda function.But you can use the if else ternary expression instead.
+
+findMin = lambda x, y: x if x < y else y
+
+print(findMin(2, 4))
+
+print(findMin('a', 'x'))
+
+# List Comprehension in a Lambda:
+flatten = lambda l: [item for sublist in l for item in sublist]
+L = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
+print(flatten(L))
+
+A = [['a', 'b', 'c'], ['d', 'e']]
+print(flatten(A))
+
+# Jump Table Using a Lambda:
+# The jump table is a list or dictionary of functions to be called on demand.
+
+# dictionary of functions:
+exponent = {'square': lambda x: x**2,
+            'cube': lambda x: x**3}
+
+print(exponent['square'](3))
+
+print(exponent['cube'](3))
+
+# list of functions:
+exponent = [lambda x: x**2,
+            lambda x: x**3]
+
+print(exponent[0](3))
+print(exponent[1](3))
 
 
+# Lambda Key Functions:
+
+L = [('Sam', 35),
+     ('Max', 25),
+     ('Bob', 30)]
+
+x = sorted(L, key=lambda student: student[1])
+print(x)
 
 
 

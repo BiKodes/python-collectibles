@@ -34,19 +34,33 @@ dis.dis(add)
 # Arguments.
 # Positional arguments:
 (lambda x, y, z: x + y + z)(1, 2, 3)
+add = lambda x, y, z: x + y + z
+print(add(2, 3, 4))
 
 # Named arguments (sometimes called keyword arguments):
 (lambda x, y, z=3: x + y + z)(1, 2)
 (lambda x, y, z=3: x + y + z)(1, y=2)
 
+add = lambda x, y, z: x + y + z
+print(add(2, z=3, y=4))
+
+# Default arguments:
+add = lambda x, y=3, z=4: x + y + z
+print(add(2))
+
 # Variable list of arguments (often referred to as varargs):
 (lambda *args: sum(args))(1, 2, 3)
+
+add = lambda *args: sum(args)
+print(add(2, 3, 4, 5))
 
 # Variable list of keyword arguments:
 (lambda **kwargs: sum(kwargs.values()))(one=1, two=2, three=3)
 
 #Keyword-only arguments:
 (lambda **kwargs: sum((kwargs.values())))(one=1, two=2, three=3)
+add = lambda **kwargs: sum(kwargs.values())
+print(add(x=2, y=3, z=4))
 
 # Decorators:
 def some_decorator(f):
@@ -131,7 +145,19 @@ for n in numbers:
 for f in funcs:
     f()
 
+# Single Expression Only:
+evenOdd = (lambda x:
+           'odd' if x%2 else 'even')
 
+# Immediately Invoked Function Expression:
+print((lambda x: x*2)(3))
+
+# Multiple Arguments:
+mul = lambda x, y: x*y
+print(mul(2, 3))
+
+add = lambda x, y, z: x + y + z
+print(add(2, 5, 10))
 
 
 
