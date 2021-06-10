@@ -1,0 +1,31 @@
+Context Managers:
+---This has been there since Python 2.5, and it’s been an ever-present feature used
+   by almost every Python application now!
+
+
+
+Python context manager applications:
+
+---The common usage of a context manager is to open and close files automatically.
+
+1) Open – Close:
+    If you want to open and close a resource automatically, you can use a context manager.
+
+    For example, you can open a socket and close it using a context manager.
+
+2) Lock – release
+    The can help you manage locks for objects more effectively.
+    They allow you to acquire a lock and release it automatically.
+
+3) Start – stop
+    They help you to work with a scenario that requires the start and stop phases.
+    For example, you can use a context manager to start a timer and stop it automatically.
+
+4) Change – reset
+    They can work with change and reset scenario.
+
+    For example, your application needs to connect to multiple data sources. And it has a default connection.
+    To connect to another data source:
+        ~First, use a context manager to change the default connection to a new one.
+        ~Second, work with the new connection
+        ~Third, reset it back to the default connection once you complete working with the new connection.
